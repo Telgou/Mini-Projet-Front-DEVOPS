@@ -1,0 +1,24 @@
+<div class="table-responsive">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">idFoyer</th>
+          <th scope="col">nomFoyer</th>
+          <th (click)="sort('capaciteFoyer')" scope="col">
+            Capacité foyer &nbsp;<i class="fa fa-sort"></i>
+          </th>
+        </tr>
+      </thead>
+      <!-- <th (click)="sort('capaciteFoyer')" scope="col">
+ &nbsp;<i class="fa fa-sort"></i>
+      </th> -->
+      <tbody>
+        <tr *ngFor="let foyer of Listefoyer ">
+          <td>{{ foyer.idFoyer }}</td>
+          <td>{{ foyer.nomFoyer }}</td>
+          <td>{{ foyer.capaciteFoyer }}</td>
+         
+        </tr>
+      </tbody>
+    </table>
+  </div>

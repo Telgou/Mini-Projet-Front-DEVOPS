@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="card mt-5" style="align-items:center;">
+    <!-- Contenu de la première carte -->
+  </div>
+  <div class="card mt-5" style="padding: 20px;">
+    <form [formGroup]="monFormulaire" (ngSubmit)="register()">
+      <div class="form-group">
+        <label for="name">Nom foyer</label>
+        <input type="text" formControlName="nomFoyer" id="name" class="form-control">
+        <div *ngIf="formSubmitted && monFormulaire.get('nomFoyer')?.hasError('required')">
+          Le nom du foyer est requis.
+        </div>
+        <!-- Ajoutez d'autres validations au besoin -->
+      </div>
+      <div class="form-group">
+        <label for="capacite">Capacité Foyer</label>
+        <input type="number" formControlName="capaciteFoyer" id="capacite" class="form-control">
+        <div *ngIf="formSubmitted && monFormulaire.get('capaciteFoyer')?.hasError('required')">
+          La capacité du foyer est requise.
+        </div>
+        <!-- Ajoutez d'autres validations au besoin -->
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" [disabled]="!monFormulaire.valid">Register</button>
+      </div>
+      <button class="btn btn-primary" type="button" (click)="onSupprimerClick()">Retour</button>
+    </form>
+  </div>
+</div>
